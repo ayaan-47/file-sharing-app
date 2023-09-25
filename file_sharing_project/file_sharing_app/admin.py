@@ -20,7 +20,7 @@ class MyUserAdmin(UserAdmin):
     )
     search_fields = ('username', 'email', 'first_name')
     ordering = ('username',)
-# file_sharing_project/admin.py
+
 from django.contrib import admin
 
 admin.autodiscover()
