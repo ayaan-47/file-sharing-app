@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>File List</h1>
+  <ul>
+    {% for file in files %}
+      <li>
+        <p>{{ file.title }}</p>
+        <input type="text" value="{{ file.download_link }}" id="download-link-{{ file.title }}" readonly>
+        <button onclick="copyToClipboard('download-link-{{ file.title }}')">Copy URL</button>
+      </li>
+    {% endfor %}
+    <h1>If you want to View the API LIST, click below...</h1>
+    <h2><a href="/files/" class="btn btn-primary">API VIEW!</a></h2>
+  </ul>
+
+  <script>
+    function copyToClipboard(elementId) {
+      var copyText = document.getElementById(elementId);
+      copyText.select();
+      document.execCommand('copy');
+      alert('Copied to clipboard: ' + copyText.value);
+    }
+  </script>
+{% endblock %}

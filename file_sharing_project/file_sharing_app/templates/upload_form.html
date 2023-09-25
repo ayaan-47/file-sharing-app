@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form method="post" enctype="multipart/form-data" action="/api/upload-file/">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".pptx, .xlsx, .docx" required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

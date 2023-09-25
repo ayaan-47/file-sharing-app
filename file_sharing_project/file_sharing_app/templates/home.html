@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome to the File Sharing Application</h1>
+        <p>Without logging in, you can only view the list of available files.</p>
+        
+        <h2>File List</h2>
+        <ul>
+            {% for file in files %}
+                <li>
+                    <p>{{ file.title }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
